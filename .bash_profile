@@ -37,7 +37,7 @@ export PATH=$PATH:usr/local/go_appengine
 export PATH=$PATH:~/.composer/vendor/bin
 
 #for java
-#export JAVA_HOME=`/usr/libexec/java_home`
+export JAVA_HOME=`/usr/libexec/java_home`
 
 #for node
 export PATH=$PATH:/usr/local/bin
@@ -56,7 +56,6 @@ do
 	fi
 done
 
-export JAVA_HOME=`/usr/libexec/java_home`
 #python
 alias py="python3"
 
