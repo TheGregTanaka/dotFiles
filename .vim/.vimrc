@@ -21,6 +21,11 @@ let mapleader="'"
 " Split windows easier
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
+" split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 " Window Pane move 
 map <leader>H :wincmd H<cr>
 map <leader>K :wincmd K<cr>
