@@ -60,7 +60,7 @@ set colorcolumn=80
 set scrolljump=5 " Line to scrole when 
 set scrolloff=3 " Minumum lines to keep above and below
 set hlsearch " highlight matches
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader><space> :nohl<cr>
 " auto reload settins when .vim files are edited
 augroup myvimrc
 	    au!
