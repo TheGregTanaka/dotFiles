@@ -32,8 +32,11 @@ map <leader>K :wincmd K<cr>
 map <leader>L :wincmd L<cr>
 map <leader>J :wincmd J<cr>
 
-" Airline
+" Hides normal vim info bar for Airline
 set noshowmode
+
+" Ignore typescript-vim's indent rules
+let g:typescript_indent_disable = 1
 
 " options for CtrlP - fuzzy file finding
 set runtimepath^=~/devConfig/.vim/bundle/ctrlp.vim
@@ -55,6 +58,7 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " inoremap <expr> <M-p> pumvisible() ? "\<C-p>" : "\<M-p>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+" display a bar at column 80, wrap text
 set textwidth=79
 set colorcolumn=80
 set scrolljump=5 " Line to scrole when 
