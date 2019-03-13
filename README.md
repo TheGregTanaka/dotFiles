@@ -27,4 +27,9 @@ ln -s devConfig/.vim/.vimrc ~/.vimrc
 
 # load
 source ~/.bash_profile
+
+# git config
+git config --global core.editor "vim"
+git config --global user.name "Greg Tanaka"
+git config --global core.filemode false
 ```
