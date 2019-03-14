@@ -1,10 +1,10 @@
 set term=builtin_ansi
-filetype plugin indent on
 set nocompatible
-source ~/devConfig/.vim/autoload/pathogen.vim
-execute pathogen#infect('~/devConfig/.vim/bundle/{}')
+source ~/devConfig/vim/autoload/pathogen.vim
+execute pathogen#infect('~/devConfig/vim/bundle/{}')
 execute pathogen#helptags()
 syntax on
+filetype plugin indent on
 set number
 set relativenumber
 runtime! config/**/*.vim
@@ -12,6 +12,7 @@ set autoindent
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
+:color desert
 
 " use comma for marks
 nnoremap ' ,
@@ -36,10 +37,10 @@ map <leader>J :wincmd J<cr>
 set noshowmode
 
 " Ignore typescript-vim's indent rules
-let g:typescript_indent_disable = 1
+" let g:typescript_indent_disable = 1
 
 " options for CtrlP - fuzzy file finding
-set runtimepath^=~/devConfig/.vim/bundle/ctrlp.vim
+set runtimepath^=~/devConfig/vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignore certain files in search
 let g:ctrlp_map = "<C-@>" " Ctrl Space to search
 " jk is escape  -.-
