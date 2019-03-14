@@ -67,6 +67,19 @@ set scrolloff=3 " Minumum lines to keep above and below
 set hlsearch " highlight matches
 nnoremap <leader><space> :nohl<cr>
 " auto reload settins when .vim files are edited
+
+" syntastic recommended options
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" enable typescript checking
+let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_tslint_exec='/usr/bin/tslint'
+
 augroup myvimrc
 	    au!
 		    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc,*.vim nested so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
