@@ -39,8 +39,8 @@ export PATH=$PATH:~/.composer/vendor/bin
 #for java
 export JAVA_HOME=`/usr/libexec/java_home`
 
-#for node
-export PATH=$PATH:/usr/local/bin
+#for node and npm
+export PATH=$PATH:/usr/local/bin/node:/usr/local/bin/npm
 
 #for Maven
 export PATH=$PATH:/opt/apache-maven-3.5.3/bin
