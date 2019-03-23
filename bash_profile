@@ -24,8 +24,8 @@ export PS1="\u@\h \W$blue\$(__git_ps1)$reset :)"
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias
-alias tmuxIde='tmux new -s ide \; split-window -v -p 22 \; split-window -t 0 -h
--p 70 \; select-pane -t 1 \; attach'
+alias tmuxIde='tmux new -s ide \; split-window -v -p 22 \; split-window -t 0 -h -p 70 \; select-pane -t 1 \; attach'
+#alias tide='tmux new -s ide \; split-window -v -p 22 \; split-window -t 0 -h -p 70 \; select-pane -t 1 \; attach'
 alias tide='tmuxIde'
 alias tiCls='tmux kill-session -t ide'
 
