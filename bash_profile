@@ -50,6 +50,8 @@ export PATH=$PATH:~/.composer/vendor/bin
 VERSION=v9.11.2
 DISTRO=linux-x64
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+#for node and npm, work
+#export PATH=$PATH:/usr/local/bin/node:/usr/local/bin/npm
 
 #for Maven
 export PATH=$PATH:/opt/apache-maven-3.5.3/bin
