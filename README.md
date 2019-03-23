@@ -23,7 +23,7 @@ git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
 # set up symlinks
 cd ~
-ln -s devConfig/.bash_profile ~/.bash_profile
+ln -s devConfig/bash_profile ~/.bash_profile
 ln -s devConfig/.vim ~/vim
 ln -s devConfig/vim/.vimrc ~/.vimrc
 
