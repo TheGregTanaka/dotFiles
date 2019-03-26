@@ -31,10 +31,10 @@ ln -s ~/devConfig/bash_profile ~/.bash_profile
 ln -s ~/devConfig/vim ~/.vim
 ln -s ~/devConfig/vim/.vimrc ~/.vimrc
 ln -s ~/devConfig/tmux.conf ~/.tmux.conf
-tmux source-fil ~/.tmux.conf
 
 # load
 source ~/.bash_profile
+tmux source-fil ~/.tmux.conf
 
 # git config
 git config --global core.editor "vim"
