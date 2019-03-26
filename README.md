@@ -26,9 +26,12 @@ cd ~
 mv ~/.bash_profile ~/.bash_profile.old
 mv ~/.vim ~/.vim.old
 mv ~/.vimrc ~/.vimrc.old
-ln -s devConfig/bash_profile ~/.bash_profile
-ln -s devConfig/vim ~/.vim
-ln -s devConfig/vim/.vimrc ~/.vimrc
+mv ~/.tmux.conf ~/.tmux.conf.old
+ln -s ~/devConfig/bash_profile ~/.bash_profile
+ln -s ~/devConfig/vim ~/.vim
+ln -s ~/devConfig/vim/.vimrc ~/.vimrc
+ln -s ~/devConfig/tmux.conf ~/.tmux.conf
+tmux source-fil ~/.tmux.conf
 
 # load
 source ~/.bash_profile
