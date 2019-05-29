@@ -10,9 +10,14 @@ set relativenumber
 runtime! config/**/*.vim
 set autoindent
 set noexpandtab
-set tabstop=4
-set shiftwidth=4
-:color desert
+set tabstop=2
+set shiftwidth=2
+" set tabstop=4
+" set shiftwidth=4
+color desert
+call plug#begin('~/devConfig/vim/plugged')
+Plug 'luochen1990/rainbow'
+call plug#end()
 
 " use comma for marks
 nnoremap ' ,
@@ -81,6 +86,9 @@ let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_tslint_exec='/usr/bin/tslint'
 " Only check html with :SyntasticCheck
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+" rainbow
+let g:rainbow_active = 1
 
 augroup myvimrc
 	    au!

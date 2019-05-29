@@ -11,6 +11,9 @@ git clone git@github.com:TheGregTanaka/dotfiles.git devConfig
 cd devConfig
 # install pathogen
 curl -LSso ~/devConfig/vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+# install plug
+curl -fLo ~/devConfig/vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install vim plugins
 cd ~/devConfig/vim/pack/completor/start
@@ -20,6 +23,7 @@ git clone https://github.com/vim-airline/vim-airline ~/devConfig/vim/bundle/vim-
 git clone https://github.com/leafgarland/typescript-vim ~/devConfig/vim/bundle/typescript-vim
 cd ~/devConfig/vim/bundle && \
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
+Plug 'luochen1990/rainbow'
 
 # set up symlinks
 cd ~
@@ -27,10 +31,12 @@ mv ~/.bash_profile ~/.bash_profile.old
 mv ~/.vim ~/.vim.old
 mv ~/.vimrc ~/.vimrc.old
 mv ~/.tmux.conf ~/.tmux.conf.old
+mv ~/.ideavimrc ~/.ideavimrc.old
 ln -s ~/devConfig/bash_profile ~/.bash_profile
 ln -s ~/devConfig/vim ~/.vim
 ln -s ~/devConfig/vim/.vimrc ~/.vimrc
 ln -s ~/devConfig/tmux.conf ~/.tmux.conf
+ln -s ~/devConfig/vim/.vimrc ~/.ideavimrc
 
 # load
 source ~/.bash_profile

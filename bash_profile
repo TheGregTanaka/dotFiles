@@ -10,15 +10,15 @@ blue="\[\033[38;05;38m\]"
 green="\[\033[0;34m\]"
 reset="\[\033[0m\]"
 
-#export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWDIRTYSTATE=1
 
 
-# export PS1="\u@💻👉 \W$blue\$(__git_ps1)$reset 👽 "
-export PS1="\u@\h \W$blue\$(__git_ps1)$reset :)"
+ export PS1="\u@💻👉 \W$blue\$(__git_ps1)$reset 👽 "
+#export PS1="\u@\h \W$blue\$(__git_ps1)$reset :)"
 #cat >> ~/.bashrc <<EOL  
-#if [ -f $(brew --prefix)/etc/bash_completion ]; then  
-	#. $(brew --prefix)/etc/bash_completion
-#fi  
+if [ -f $(brew --prefix)/etc/bash_completion ]; then  
+	. $(brew --prefix)/etc/bash_completion
+fi  
 #EOL  
 
 #syntax highlighting for less
@@ -43,15 +43,15 @@ export PATH=$PATH:usr/local/go_appengine
 export PATH=$PATH:~/.composer/vendor/bin
 
 #for java
-#export JAVA_HOME=`/usr/libexec/java_home`
+export JAVA_HOME=`/usr/libexec/java_home`
 
 #for node
 # export PATH=$PATH:/usr/local/bin
-VERSION=v9.11.2
-DISTRO=linux-x64
-export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
+#VERSION=v9.11.2
+#DISTRO=linux-x64
+#export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
 #for node and npm, work
-#export PATH=$PATH:/usr/local/bin/node:/usr/local/bin/npm
+export PATH=$PATH:/usr/local/bin/node:/usr/local/bin/npm
 
 #for Maven
 export PATH=$PATH:/opt/apache-maven-3.5.3/bin
@@ -75,3 +75,6 @@ alias py="python3"
 
 # added by Anaconda3 5.2.0 installer
 export PATH="/anaconda3/bin:$PATH"
+
+#mysql
+export PATH=/usr/local/mysql/bin:$PATH 
