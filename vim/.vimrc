@@ -1,7 +1,7 @@
 set term=builtin_ansi
 set nocompatible
-source ~/devConfig/vim/autoload/pathogen.vim
-execute pathogen#infect('~/devConfig/vim/bundle/{}')
+source ~/dotFiles/vim/autoload/pathogen.vim
+execute pathogen#infect('~/dotFiles/vim/bundle/{}')
 execute pathogen#helptags()
 syntax on
 filetype plugin indent on
@@ -15,7 +15,7 @@ set shiftwidth=2
 " set tabstop=4
 " set shiftwidth=4
 color desert
-call plug#begin('~/devConfig/vim/plugged')
+call plug#begin('~/dotFiles/vim/plugged')
 Plug 'luochen1990/rainbow'
 call plug#end()
 
@@ -45,7 +45,7 @@ set noshowmode
 " let g:typescript_indent_disable = 1
 
 " options for CtrlP - fuzzy file finding
-set runtimepath^=~/devConfig/vim/bundle/ctrlp.vim
+set runtimepath^=~/dotFiles/vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignore certain files in search
 let g:ctrlp_map = "<C-@>" " Ctrl Space to search
 " jk is escape  -.-

@@ -1,8 +1,8 @@
 # Enable tab completion
-source ~/devConfig/.udacity-terminal-config/git-completion.bash
+source ~/dotFiles/.udacity-terminal-config/git-completion.bash
 
 # Change command prompt
-source ~/devConfig/.udacity-terminal-config/git-prompt.sh
+source ~/dotFiles/.udacity-terminal-config/git-prompt.sh
 
 # colors!
 red="\[\033[38;5;203m\]"
@@ -60,7 +60,7 @@ export PATH=$PATH:/opt/apache-maven-3.5.3/bin
 export PATH=$PATH:/usr/bin/tslint
 
 # import any .sh files from gitignored file
-secrets="~/devConfig/.secrets"
+secrets="~/dotFiles/.secrets"
 for file in "$secrets"/*.sh
 do
 	load=$file
