@@ -30,16 +30,15 @@ alias tide='tmuxIde'
 alias tiCls='tmux kill-session -t ide'
 
 #for Golang Programming
-export GOROOT="/usr/local/go"
-export GOPATH="$HOME/Projects/golang"
-export GOBIN="$GOPATH/bin"
-export PATH=$PATH:$GOBIN:~/Library/Python/3.6/bin
-
-#for PHP
-export PATH=$PATH:/usr/bin/php
+export GOPATH="~/dev/go"
+#export GOPATH="$HOME/Projects/golang"
+#export GOBIN="$GOPATH/bin"
+export PATH=$PATH:$GOPATH
 #for GO Engine
 export PATH=$PATH:usr/local/go_appengine
 
+#for PHP
+export PATH=$PATH:/usr/bin/php
 export PATH=$PATH:~/.composer/vendor/bin
 
 #for java
@@ -71,6 +70,7 @@ do
 done
 
 #python
+export PATH=$PATH:~/Library/Python/3.6/bin
 alias py="python3"
 
 # added by Anaconda3 5.2.0 installer
