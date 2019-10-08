@@ -27,11 +27,11 @@ Plug 'luochen1990/rainbow'
 
 # set up symlinks
 cd ~
-mv ~/.bash_profile ~/.bash_profile.old
-mv ~/.vim ~/.vim.old
-mv ~/.vimrc ~/.vimrc.old
-mv ~/.tmux.conf ~/.tmux.conf.old
-mv ~/.ideavimrc ~/.ideavimrc.old
+cat ~/.bash_profile >> ~/.bash_profile.old
+cat ~/.vim >> ~/.vim.old
+cat ~/.vimrc >> ~/.vimrc.old
+cat ~/.tmux.conf >> ~/.tmux.conf.old
+cat ~/.ideavimrc >> ~/.ideavimrc.old
 ln -s ~/dotFiles/bash_profile ~/.bash_profile
 ln -s ~/dotFiles/vim ~/.vim
 ln -s ~/dotFiles/vim/.vimrc ~/.vimrc
@@ -44,6 +44,6 @@ tmux source-fil ~/.tmux.conf
 
 # git config
 git config --global core.editor "vim"
-git config --global user.name "Greg Tanaka"
+git config --global user.name "Gregory Tanaka"
 git config --global core.filemode false
 ```
