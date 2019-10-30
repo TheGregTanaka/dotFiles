@@ -47,3 +47,15 @@ git config --global core.editor "vim"
 git config --global user.name "Gregory Tanaka"
 git config --global core.filemode false
 ```
+
+PHP 7.0 has been depricated. It can be installed from here:
+https://github.com/eXolnet/homebrew-deprecated using the following commands.
+```
+#to install php7.0
+brew tap exolnet/homebrew-deprecated
+brew install php@7.0
+#to start it at login
+brew services start exolnet/deprecated/php@7.0
+```
+The bash_profile contains the necessary exports to add this to the path and
+make it visible to compilers.

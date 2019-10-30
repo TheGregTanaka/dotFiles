@@ -18,7 +18,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 if [ -f $(brew --prefix)/etc/bash_completion ]; then  
 	. $(brew --prefix)/etc/bash_completion
 fi  
-EOL  
+#EOL  
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
@@ -39,6 +39,14 @@ export PATH="$PATH:/usr/local/go_appengine"
 #for PHP
 export PATH="$PATH:/usr/bin/php"
 export PATH="$PATH:~/.composer/vendor/bin"
+
+#for PHP7.0, installed via depricated formula
+export PATH="/usr/local/opt/php@7.0/bin:$PATH"
+export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
+
+#for compilers to find php7.0
+export LDFLAGS="-L/usr/local/opt/php@7.0/lib"
+export CPPFLAGS="-I/usr/local/opt/php@7.0/include"
 
 #for java
 export JAVA_HOME=`/usr/libexec/java_home`
