@@ -41,12 +41,20 @@ export PATH="$PATH:/usr/bin/php"
 export PATH="$PATH:~/.composer/vendor/bin"
 
 #for PHP7.0, installed via depricated formula
-export PATH="/usr/local/opt/php@7.0/bin:$PATH"
-export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
+#export PATH="/usr/local/opt/php@7.0/bin:$PATH"
+#export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
 
 #for compilers to find php7.0
-export LDFLAGS="-L/usr/local/opt/php@7.0/lib"
-export CPPFLAGS="-I/usr/local/opt/php@7.0/include"
+#export LDFLAGS="-L/usr/local/opt/php@7.0/lib"
+#export CPPFLAGS="-I/usr/local/opt/php@7.0/include"
+
+#for PHP7.3, installed via depricated formula
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+
+#for compilers to find php7.3
+export LDFLAGS="-L/usr/local/opt/php@7.3/lib"
+export CPPFLAGS="-I/usr/local/opt/php@7.3/include"
 
 #for java
 export JAVA_HOME=`/usr/libexec/java_home`
@@ -67,13 +75,10 @@ export PATH="$PATH:/opt/apache-maven-3.5.3/bin"
 export PATH="$PATH:/usr/bin/tslint"
 
 # import any .sh files from gitignored file
-secrets="~/dotFiles/.secrets"
-for file in "$secrets"/*.sh
+for file in ~/dotFiles/.secrets/*.sh
 do
-	load=$file
-	if [ -f "$load" ];
-	then
-		. $load
+	if [ -f "$file" ]; then
+		. $file
 	fi
 done
 
@@ -86,3 +91,6 @@ export PATH="$PATH:/anaconda3/bin"
 
 #mysql
 export PATH="$PATH:/usr/local/mysql/bin"
+
+#openvpn
+export PATH="$PATH:/usr/local/Cellar/openvpn/2.4.7_1/sbin/openvpn"

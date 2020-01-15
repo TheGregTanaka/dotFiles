@@ -28,10 +28,10 @@ let mapleader="'"
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 " split navigation
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 " Window Pane move 
 map <leader>H :wincmd H<cr>
 map <leader>K :wincmd K<cr>
@@ -94,3 +94,6 @@ augroup myvimrc
 	    au!
 		    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc,*.vim nested so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 		augroup END
+
+"format json in buffer
+map <leader>fj :%!python -m json.tool<cr>
