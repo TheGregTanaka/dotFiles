@@ -1,3 +1,4 @@
+call plug#begin('~/.vim/plugged')
 set term=builtin_ansi
 set nocompatible
 source ~/dotFiles/vim/autoload/pathogen.vim
@@ -15,9 +16,9 @@ set shiftwidth=2
 " set tabstop=4
 " set shiftwidth=4
 color desert
-call plug#begin('~/dotFiles/vim/plugged')
-Plug 'luochen1990/rainbow'
-call plug#end()
+" call plug#begin('~/dotFiles/vim/plugged')
+" Plug 'luochen1990/rainbow'
+" call plug#end()
 
 " use comma for marks
 nnoremap ' ,
@@ -28,10 +29,10 @@ let mapleader="'"
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
 " split navigation
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 " Window Pane move 
 map <leader>H :wincmd H<cr>
 map <leader>K :wincmd K<cr>
@@ -97,3 +98,6 @@ augroup myvimrc
 
 "format json in buffer
 map <leader>fj :%!python -m json.tool<cr>
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+highlight ExtraWhitespace ctermbg=red

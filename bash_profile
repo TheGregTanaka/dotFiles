@@ -14,6 +14,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 
  export PS1="\u@💻👉 \W$blue\$(__git_ps1)$reset 👽 "
+# for systems that don't support emoji in terminal
 #export PS1="\u@\h \W$blue\$(__git_ps1)$reset :)"
 if [ -f $(brew --prefix)/etc/bash_completion ]; then  
 	. $(brew --prefix)/etc/bash_completion
@@ -22,6 +23,9 @@ fi
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
+#make mv and cp always interactive and verbose
+alias cp='cp -iv'
+alias mv='mv -iv'
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias
@@ -40,33 +44,16 @@ export PATH="$PATH:/usr/local/go_appengine"
 export PATH="$PATH:/usr/bin/php"
 export PATH="$PATH:~/.composer/vendor/bin"
 
-#for PHP7.0, installed via depricated formula
-#export PATH="/usr/local/opt/php@7.0/bin:$PATH"
-#export PATH="/usr/local/opt/php@7.0/sbin:$PATH"
-
-#for compilers to find php7.0
-#export LDFLAGS="-L/usr/local/opt/php@7.0/lib"
-#export CPPFLAGS="-I/usr/local/opt/php@7.0/include"
-
-#for PHP7.3, installed via depricated formula
-export PATH="/usr/local/opt/php@7.3/bin:$PATH"
-export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
-
-#for compilers to find php7.3
-export LDFLAGS="-L/usr/local/opt/php@7.3/lib"
-export CPPFLAGS="-I/usr/local/opt/php@7.3/include"
-
 #for java
 export JAVA_HOME=`/usr/libexec/java_home`
 
-#for node
+#for node, home config
 # export PATH=$PATH:/usr/local/bin
 #VERSION=v9.11.2
 #DISTRO=linux-x64
 #export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
-#for node and npm, work
+#for node and npm, work config
 export PATH="$PATH:/usr/local/bin/node:/usr/local/bin/npm"
-
 
 #for Maven
 export PATH="$PATH:/opt/apache-maven-3.5.3/bin"
@@ -94,3 +81,5 @@ export PATH="$PATH:/usr/local/mysql/bin"
 
 #openvpn
 export PATH="$PATH:/usr/local/Cellar/openvpn/2.4.7_1/sbin/openvpn"
+
+export PATH="$HOME/.cargo/bin:$PATH"

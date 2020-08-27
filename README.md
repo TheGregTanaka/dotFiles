@@ -4,6 +4,8 @@ Environment config files to make set up on different devices easier.
 Quick setup
 ```
 # set up key - this should be done manually
+# on mac to set brew linkings
+brew install vim
 
 # pull down config files
 cd ~
