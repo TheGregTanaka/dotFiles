@@ -23,7 +23,6 @@ fi
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
-<<<<<<< HEAD
 #make mv and cp always interactive and verbose
 alias cp='cp -iv'
 alias mv='mv -iv'
