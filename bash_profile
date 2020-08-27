@@ -23,15 +23,24 @@ fi
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
+<<<<<<< HEAD
 #make mv and cp always interactive and verbose
 alias cp='cp -iv'
 alias mv='mv -iv'
+#navigate to dev directories
+alias cdev="cd $HOME/dev"
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias
 alias tmuxIde='tmux new -s ide \; split-window -v -p 22 \; split-window -t 0 -h -p 70 \; select-pane -t 1 \; attach'
 alias tide='tmuxIde'
 alias tiCls='tmux kill-session -t ide'
+
+#custom docker and docker-compose commands
+COMPOSE_PATH="$HOME/dev/compose/docker-compose.yml"
+function compose-up { docker-compose -f "$COMPOSE_PATH" up -d "$1"; }
+function compose-down { docker-compose -f "$COMPOSE_PATH" stop "$1"; }
+function dexec { docker exec -it "$1" bash; }
 
 #for Golang Programming
 export GOPATH=$HOME/dev/go
