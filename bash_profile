@@ -23,6 +23,8 @@ fi
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
+#quick grep bash_profile
+function grexplain { grep "$1" ~/dotFiles/bash_profile; }
 #make mv and cp always interactive and verbose
 alias cp='cp -iv'
 alias mv='mv -iv'
@@ -40,6 +42,13 @@ COMPOSE_PATH="$HOME/dev/compose/docker-compose.yml"
 function compose-up { docker-compose -f "$COMPOSE_PATH" up -d "$1"; }
 function compose-down { docker-compose -f "$COMPOSE_PATH" stop "$1"; }
 function dexec { docker exec -it "$1" bash; }
+
+#for C++
+alias gp="g++ -std=c++11"
+# get makefile from dotFiles
+alias getMake="cp ~/dotFiles/cppMakefile ./makefile"
+alias mm="getMake"
+alias mmm="getMake && make"
 
 #for Golang Programming
 export GOPATH=$HOME/dev/go

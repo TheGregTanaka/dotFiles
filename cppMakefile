@@ -1,0 +1,29 @@
+CXX = g++
+CXXFLAGS = -Wall -Wextra -std=c++11
+#CSSFLAGS += -I/path/to/include/
+
+TARGET = program
+SRCDIR = ./
+SRCS = $(wildcard $(SRCDIR)/*.cpp)
+OBJS = $(SRCS:.cpp=.o)
+
+.PHONY: all clean run
+
+all: $(TARGET) run clean
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+
+clean:
+	@echo Cleaning up:
+	rm -f $(OBJS)
+
+run: $(TARGET)
+	@echo Running:
+	./$(TARGET)
+
+-include $(DEPS)
