@@ -1,3 +1,4 @@
+M = $(shell printf "\033[34;1m▶\033[0m")
 CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++11
 #CSSFLAGS += -I/path/to/include/
@@ -9,21 +10,19 @@ OBJS = $(SRCS:.cpp=.o)
 
 .PHONY: all clean run
 
-all: $(TARGET) run clean
+all: build clean run
 
-$(TARGET): $(OBJS)
+build: $(OBJS); $(info $(M) Linking...)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 
-clean:
-	@echo Cleaning up:
+clean: ; $(info $(M) Cleaning up...)
 	rm -f $(OBJS)
 
-run: $(TARGET)
-	@echo Running:
+run: $(TARGET); $(info $(M) Running...)
 	./$(TARGET)
 
 -include $(DEPS)
