@@ -1,7 +1,7 @@
 M = $(shell printf "\033[34;1m▶\033[0m")
 CXX = g++
 CXXFLAGS = -Wall -Wextra -std=c++11
-#CSSFLAGS += -I/path/to/include/
+#CXXFLAGS += -I/path/to/include/
 
 TARGET = program
 SRCDIR = ./
