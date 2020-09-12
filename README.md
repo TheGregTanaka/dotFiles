@@ -50,3 +50,4 @@ git config --global user.name "Gregory Tanaka"
 git config --global core.filemode false
 ```
 
+Largely copied from [@squk](https://github.com/squk)
