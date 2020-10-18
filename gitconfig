@@ -1,0 +1,7 @@
+[user]
+	email = g.tanaka@matter6.com
+	name = Gregory Tanaka
+[core]
+	editor = vim
+	filemode = false
+	excludesfile = ~/.gitignoreglobal

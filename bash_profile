@@ -30,12 +30,15 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 #navigate to dev directories
 alias cdev="cd $HOME/dev"
+alias cdcd="cd $HOME/OneDrive/college/2020-2021fall/"
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias
 alias tmuxIde='tmux new -s ide \; split-window -v -p 22 \; split-window -t 0 -h -p 70 \; select-pane -t 1 \; attach'
 alias tide='tmuxIde'
 alias tiCls='tmux kill-session -t ide'
+#because I'm super lazy
+alias mb="make build"
 
 #custom docker and docker-compose commands
 COMPOSE_PATH="$HOME/dev/compose/docker-compose.yml"
@@ -100,3 +103,6 @@ export PATH="$PATH:/usr/local/mysql/bin"
 export PATH="$PATH:/usr/local/Cellar/openvpn/2.4.7_1/sbin/openvpn"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
+export PATH="$PATH:/usr/local/lib"
