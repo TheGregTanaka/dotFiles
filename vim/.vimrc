@@ -33,6 +33,11 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Resize splits
+nnoremap <silent> <leader>h <C-w><
+nnoremap <silent> <leader>j <C-w>+
+nnoremap <silent> <leader>k <C-w>-
+nnoremap <silent> <leader>l <C-w>>
 " Window Pane move 
 map <leader>H :wincmd H<cr>
 map <leader>K :wincmd K<cr>
@@ -82,6 +87,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" c++ version
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 " enable typescript checking
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_tslint_exec='/usr/bin/tslint'

@@ -29,8 +29,9 @@ function grexplain { grep "$1" ~/dotFiles/bash_profile; }
 alias cp='cp -iv'
 alias mv='mv -iv'
 #navigate to dev directories
+alias cdot="cd $HOME/dotFiles"
 alias cdev="cd $HOME/dev"
-alias cdcd="cd $HOME/OneDrive/college/2020-2021fall/"
+alias cdcd="cd $HOME/OneDrive/college/2020-2021fall"
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias
