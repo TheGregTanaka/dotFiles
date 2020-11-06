@@ -23,11 +23,14 @@ fi
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
-#quick grep bash_profile
+#you'd think it stands for 'grep explain'
+#but it actually stands for 'greg explain'
 function grexplain { grep "$1" ~/dotFiles/bash_profile; }
 #make mv and cp always interactive and verbose
 alias cp='cp -iv'
 alias mv='mv -iv'
+#default path option
+alias mkdir='mkdir -p'
 #navigate to dev directories
 alias cdot="cd $HOME/dotFiles"
 alias cdev="cd $HOME/dev"

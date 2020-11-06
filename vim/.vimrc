@@ -10,7 +10,7 @@ set number
 set relativenumber
 runtime! config/**/*.vim
 set autoindent
-set noexpandtab
+set expandtab
 set tabstop=2
 set shiftwidth=2
 " set tabstop=4
@@ -34,21 +34,24 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " Resize splits
-nnoremap <silent> <leader>h <C-w><
-nnoremap <silent> <leader>j <C-w>+
-nnoremap <silent> <leader>k <C-w>-
-nnoremap <silent> <leader>l <C-w>>
+nnoremap <silent> <leader>h 2<C-w><
+nnoremap <silent> <leader>j 2<C-w>-
+nnoremap <silent> <leader>k 2<C-w>+
+nnoremap <silent> <leader>l 2<C-w>>
 " Window Pane move 
 map <leader>H :wincmd H<cr>
 map <leader>K :wincmd K<cr>
 map <leader>L :wincmd L<cr>
 map <leader>J :wincmd J<cr>
 
+" close location buffer, useful for hiding syntastic errors
+noremap <silent> <leader>q :lclose<CR>
+
 " Hides normal vim info bar for Airline
 set noshowmode
 
 " Ignore typescript-vim's indent rules
-" let g:typescript_indent_disable = 1
+let g:typescript_indent_disable = 1
 
 " options for CtrlP - fuzzy file finding
 set runtimepath^=~/dotFiles/vim/bundle/ctrlp.vim
@@ -90,6 +93,9 @@ let g:syntastic_check_on_wq = 0
 " c++ version
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+" python
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['python']
 " enable typescript checking
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_tslint_exec='/usr/bin/tslint'

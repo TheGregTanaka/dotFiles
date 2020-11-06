@@ -6,6 +6,7 @@ Quick setup
 # set up key - this should be done manually
 # on mac to set brew linkings
 brew install vim
+brew install source-highlight
 
 # pull down config files
 cd ~
@@ -53,7 +54,7 @@ ln -s ~/dotFiles/gitignoreglobal ~/.gitignoreglobal
 
 # load
 source ~/.bash_profile
-tmux source-fil ~/.tmux.conf
+tmux source-file ~/.tmux.conf
 
 # git config - no longer needed, git config file also included in this repo now
 #git config --global core.editor "vim"
