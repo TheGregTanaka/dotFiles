@@ -1,9 +1,20 @@
+" plugins
 call plug#begin('~/.vim/plugged')
+Plug 'vim-syntastic/syntastic'
+Plug 'maralla/completor.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'luochen1990/rainbow'
+call plug#end()
+
+" editor settings
 set term=builtin_ansi
 set nocompatible
-source ~/dotFiles/vim/autoload/pathogen.vim
-execute pathogen#infect('~/dotFiles/vim/bundle/{}')
-execute pathogen#helptags()
+" source ~/dotFiles/vim/autoload/pathogen.vim
+" execute pathogen#infect('~/dotFiles/vim/bundle/{}')
+" execute pathogen#helptags()
 syntax on
 filetype plugin indent on
 set number
@@ -11,15 +22,9 @@ set relativenumber
 runtime! config/**/*.vim
 set autoindent
 set expandtab
-set tabstop=2
-set shiftwidth=2
-" set tabstop=4
-" set shiftwidth=4
 color desert
-" call plug#begin('~/dotFiles/vim/plugged')
-" Plug 'luochen1990/rainbow'
-" call plug#end()
 
+" Key mappings and shortcuts
 " use comma for marks
 nnoremap ' ,
 " use ' for leader
@@ -73,6 +78,8 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " inoremap <expr> <M-p> pumvisible() ? "\<C-p>" : "\<M-p>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+
 " display a bar at column 80, wrap text
 set textwidth=79
 set colorcolumn=80
@@ -80,7 +87,6 @@ set scrolljump=5 " Line to scrole when
 set scrolloff=3 " Minumum lines to keep above and below
 set hlsearch " highlight matches
 nnoremap <leader><space> :nohl<cr>
-" auto reload settins when .vim files are edited
 
 " syntastic recommended options
 set statusline+=%#warningmsg#
@@ -105,13 +111,12 @@ let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 " rainbow
 let g:rainbow_active = 1
 
+" auto reload settings when .vim files are edited
 augroup myvimrc
-	    au!
-		    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc,*.vim nested so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-		augroup END
+    au!
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc,*.vim nested so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+augroup END
 
 "format json in buffer
 map <leader>fj :%!python -m json.tool<cr>
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rust-lang/rust.vim'
 highlight ExtraWhitespace ctermbg=red
