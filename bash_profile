@@ -1,10 +1,12 @@
 # Enable tab completion
 source ~/dotFiles/.udacity-terminal-config/git-completion.bash
 
-# Change command prompt
+# Change command prompt in git repos
 source ~/dotFiles/.udacity-terminal-config/git-prompt.sh
 
 # colors!
+export CLICOLOR=1
+export LSCOLORS=ExGxFxdxCxDxDxxbaDecac
 red="\[\033[38;5;203m\]"
 blue="\[\033[38;05;38m\]"
 green="\[\033[0;34m\]"
@@ -17,12 +19,14 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 # for systems that don't support emoji in terminal
 #export PS1="\u@\h \W$blue\$(__git_ps1)$reset :)"
 if [ -f $(brew --prefix)/etc/bash_completion ]; then  
-	. $(brew --prefix)/etc/bash_completion
+        . $(brew --prefix)/etc/bash_completion
 fi  
 #EOL  
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
+#use brew vim
+#alias vim='/usr/local/Cellar/vim/8.2.1950/bin/vim'
 #you'd think it stands for 'grep explain'
 #but it actually stands for 'greg explain'
 function grexplain { grep "$1" ~/dotFiles/bash_profile; }
@@ -38,7 +42,8 @@ alias cdcd="cd $HOME/OneDrive/college/2020-2021fall"
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias
-alias tmuxIde='tmux new -s ide \; split-window -v -p 22 \; split-window -t 0 -h -p 70 \; select-pane -t 1 \; attach'
+#alias tmuxIde='tmux -2 new -s ide \; split-window -v -p 22 \; split-window -t 0 -h -p 70 \; select-pane -t 1 \; attach'
+alias tmuxIde='tmux -2 new -s ide \; split-window -v -p 22 \; select-pane -t 0 \; attach'
 alias tide='tmuxIde'
 alias tiCls='tmux kill-session -t ide'
 #because I'm super lazy

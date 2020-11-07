@@ -2,19 +2,19 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
 Plug 'maralla/completor.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 " Plug 'luochen1990/rainbow'
 call plug#end()
 
 " editor settings
+set t_Co=256
 set term=builtin_ansi
 set nocompatible
-" source ~/dotFiles/vim/autoload/pathogen.vim
-" execute pathogen#infect('~/dotFiles/vim/bundle/{}')
-" execute pathogen#helptags()
 syntax on
 filetype plugin indent on
 set number
@@ -24,12 +24,29 @@ set autoindent
 set expandtab
 color desert
 
+" display a bar at column 80, wrap text
+set textwidth=79
+set colorcolumn=80
+set scrolljump=5 " Line to scroll 
+set scrolloff=3 " Minumum lines to keep above and below
+set hlsearch " highlight matches
+
 " Key mappings and shortcuts
 " use comma for marks
 nnoremap ' ,
 " use ' for leader
 let mapleader="'"
 
+nnoremap <leader><space> :nohl<cr>
+inoremap jk <esc>
+" tab navigation
+nnoremap J :tabprevious<CR>
+nnoremap K :tabnext<CR>
+" ctrl o to open file in new tab
+nnoremap <C-o> :tabe 
+" no shift for colon comds
+nnoremap ; : 
+vnoremap ; : 
 " Split windows easier
 nnoremap <silent> vv <C-w>v
 nnoremap <silent> ss <C-w>s
@@ -52,8 +69,6 @@ map <leader>J :wincmd J<cr>
 " close location buffer, useful for hiding syntastic errors
 noremap <silent> <leader>q :lclose<CR>
 
-" Hides normal vim info bar for Airline
-set noshowmode
 
 " Ignore typescript-vim's indent rules
 let g:typescript_indent_disable = 1
@@ -62,16 +77,6 @@ let g:typescript_indent_disable = 1
 set runtimepath^=~/dotFiles/vim/bundle/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignore certain files in search
 let g:ctrlp_map = "<C-@>" " Ctrl Space to search
-" jk is escape  -.-
-inoremap jk <esc>
-" tab navigation
-nnoremap J :tabprevious<CR>
-nnoremap K :tabnext<CR>
-" ctrl o to open file in new tab
-nnoremap <C-o> :tabe 
-" no shift for colon comds
-nnoremap ; : 
-vnoremap ; : 
 " use tab to select completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <M-n> pumvisible() ? "\<C-n>" : "\<M-n>"
@@ -80,15 +85,20 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 
-" display a bar at column 80, wrap text
-set textwidth=79
-set colorcolumn=80
-set scrolljump=5 " Line to scrole when 
-set scrolloff=3 " Minumum lines to keep above and below
-set hlsearch " highlight matches
-nnoremap <leader><space> :nohl<cr>
+" Settings for pluggins
 
-" syntastic recommended options
+" Airline
+if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+" Hides normal vim info bar for Airline
+set noshowmode
+let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
