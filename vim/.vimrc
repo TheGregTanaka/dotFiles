@@ -45,11 +45,10 @@ nnoremap K :tabnext<CR>
 " ctrl o to open file in new tab
 nnoremap <C-o> :tabe 
 " no shift for colon comds
-nnoremap ; : 
-vnoremap ; : 
+nnoremap ; :
 " Split windows easier
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
+nnoremap vv :vsplit 
+nnoremap ss :split 
 " split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -79,8 +78,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignore certain files in search
 let g:ctrlp_map = "<C-@>" " Ctrl Space to search
 " use tab to select completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <M-n> pumvisible() ? "\<C-n>" : "\<M-n>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <M-n> pumvisible() ? "\<C-n>" : "\<M-n>"
 " inoremap <expr> <M-p> pumvisible() ? "\<C-p>" : "\<M-p>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 

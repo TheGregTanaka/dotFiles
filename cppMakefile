@@ -11,6 +11,7 @@ OBJS = $(SRCS:.cpp=.o)
 .PHONY: all clean run
 
 all: build clean run
+debug: debugbuild clean debugrun
 
 build: $(OBJS); $(info $(M) Linking...)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
@@ -24,5 +25,11 @@ clean: ; $(info $(M) Cleaning up...)
 
 run: $(TARGET); $(info $(M) Running...)
 	./$(TARGET)
+
+debugbuild: $(OBJS); $(info $(M) Building with Debugging...)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET) -ggdb
+
+debugrun: $(TARGET); $(info $(M) Running with Debugging...)
+	gdb ./$(TARGET)
 
 -include $(DEPS)

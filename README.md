@@ -8,6 +8,9 @@ Quick setup
 brew install vim
 brew install tmux
 brew install source-highlight
+brew install gdb
+" may have to manually add codesign cert on mac
+codesign --entitlements gdb-entitlement.xml -fs gdb-cert codesign /usr/local/bin/gdb
 
 # pull down config files
 cd ~
@@ -33,6 +36,9 @@ cat ~/.gitconfig >> ~/.gitconfig.old
 rm ~/.gitconfig
 cat ~/.gitignoreglobal >> ~/.gitignoreglobal.old
 rm ~/.gitignoreglobal
+cat ~/.gdbinit >> ~/.gdbinit.old
+rm ~/.gdbinit
+ln -s ~/dotFiles/gdbinit ~/.gdbinit
 ln -s ~/dotFiles/bash_profile ~/.bash_profile
 ln -s ~/dotFiles/vim ~/.vim
 ln -s ~/dotFiles/vim/.vimrc ~/.vimrc
