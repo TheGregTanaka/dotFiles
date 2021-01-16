@@ -1,6 +1,7 @@
 M = $(shell printf "\033[34;1m▶\033[0m")
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++11
+CXXFLAGS = -std=c++11
+CXXFLAGSW = -Wall -Wextra -ggdb -std=c++11 
 #CXXFLAGS += -I/path/to/include/
 
 TARGET = program
@@ -8,17 +9,18 @@ SRCDIR = .
 SRCS = $(wildcard $(SRCDIR)/*.cpp)
 OBJS = $(SRCS:.cpp=.o)
 
-.PHONY: all clean run
+.PHONY: all clean run buildclean testbuild debug
 
 all: build clean run
-debug: debugbuild clean debugrun
+buildclean: build clean
+testbuild: debugbuild clean run
+debug: debugbuild debugrun clean
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGSW) -c $< -o $@
 
 build: $(OBJS); $(info $(M) Linking...)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
 
 clean: ; $(info $(M) Cleaning up...)
 	rm -f $(OBJS)
@@ -27,9 +29,9 @@ run: $(TARGET); $(info $(M) Running...)
 	./$(TARGET)
 
 debugbuild: $(OBJS); $(info $(M) Building with Debugging...)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET) -ggdb
+	$(CXX) $(CXXFLAGSW) $(OBJS) -o $(TARGET)
 
-debugrun: $(TARGET); $(info $(M) Running with Debugging...)
+debugrun: $(TARGET); $(info $(M) Running Debugger...)
 	gdb ./$(TARGET)
 
 -include $(DEPS)

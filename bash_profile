@@ -38,7 +38,7 @@ alias mkdir='mkdir -p'
 #navigate to dev directories
 alias cdot="cd $HOME/dotFiles"
 alias cdev="cd $HOME/dev"
-alias cdcd="cd $HOME/OneDrive/college/2020-2021fall"
+alias cdcd="cd $HOME/OneDrive/college/2020-2021spring"
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias
@@ -48,6 +48,8 @@ alias tide='tmuxIde'
 alias tiCls='tmux kill-session -t ide'
 #because I'm super lazy
 alias mb="make build"
+alias md="make testbuild"
+alias mgdb="make debug"
 
 #custom docker and docker-compose commands
 COMPOSE_PATH="$HOME/dev/compose/docker-compose.yml"
