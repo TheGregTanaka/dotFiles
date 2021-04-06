@@ -47,7 +47,7 @@ ln -s ~/dotFiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotFiles/vim/.vimrc ~/.ideavimrc
 ln -s ~/dotFiles/gitconfig ~/.gitconfig
 ln -s ~/dotFiles/gitignoreglobal ~/.gitignoreglobal
-ln -s ~/dotFiles/zprofile ~/.zprofile
+ln -s ~/dotFiles/zprofile ~/.zshrc
 
 # load
 #source ~/.bash_profile
