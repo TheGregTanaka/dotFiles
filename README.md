@@ -38,6 +38,7 @@ cat ~/.gitignoreglobal >> ~/.gitignoreglobal.old
 rm ~/.gitignoreglobal
 cat ~/.gdbinit >> ~/.gdbinit.old
 rm ~/.gdbinit
+rm ~/.zprofile
 ln -s ~/dotFiles/gdbinit ~/.gdbinit
 ln -s ~/dotFiles/bash_profile ~/.bash_profile
 ln -s ~/dotFiles/vim ~/.vim
@@ -46,15 +47,13 @@ ln -s ~/dotFiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotFiles/vim/.vimrc ~/.ideavimrc
 ln -s ~/dotFiles/gitconfig ~/.gitconfig
 ln -s ~/dotFiles/gitignoreglobal ~/.gitignoreglobal
+ln -s ~/dotFiles/zprofile ~/.zprofile
 
 # load
-source ~/.bash_profile
+#source ~/.bash_profile
+source ~/.zprofile
 tmux source-file ~/.tmux.conf
 
-# git config - no longer needed, git config file also included in this repo now
-#git config --global core.editor "vim"
-#git config --global user.name "Gregory Tanaka"
-#git config --global core.filemode false
 ```
 
 Largely copied from [@squk](https://github.com/squk)

@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 " Plug 'luochen1990/rainbow'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " editor settings
@@ -17,6 +18,9 @@ set term=builtin_ansi
 set nocompatible
 syntax on
 filetype plugin indent on
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
 set number
 set relativenumber
 runtime! config/**/*.vim

@@ -1,21 +1,15 @@
 # Enable tab completion
-source ~/dotFiles/gitscripts/git-completion.zsh
+fpath=(~/.zsh $fpath)
+#source ~/dotFiles/gitscripts/git-completion.zsh
 
 # Change command prompt in git repos
 source ~/dotFiles/gitscripts/git-prompt.sh
 
-# colors!
-export CLICOLOR=1
-export LSCOLORS=ExGxFxdxCxDxDxxbaDecac
-red="\[\033[38;5;203m\]"
-blue="\[\033[38;05;38m\]"
-green="\[\033[0;34m\]"
-reset="\[\033[0m\]"
-
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-
- export PS1="\u@💻👉 \W$blue\$(__git_ps1)$reset 👽 "
+autoload -U colors && colors
+#export PS1="%n@💻👉 %1~$blue\$(__git_ps1)$reset 👽 "
+setopt PROMPT_SUBST ; PS1='%n@💻👉 %1~%{$fg[cyan]%}$(__git_ps1 " (%s)") %{$reset_color%}👽 '
 # for systems that don't support emoji in terminal
 #export PS1="\u@\h \W$blue\$(__git_ps1)$reset :)"
 if [ -f $(brew --prefix)/etc/bash_completion ]; then  
@@ -91,14 +85,6 @@ export PATH="$PATH:/opt/apache-maven-3.5.3/bin"
 
 #for tslint
 export PATH="$PATH:/usr/bin/tslint"
-
-# import any .sh files from gitignored file
-for file in ~/dotFiles/.secrets/*.sh
-do
-	if [ -f "$file" ]; then
-		. $file
-	fi
-done
 
 #python
 export PATH="$PATH:~/Library/Python/3.6/bin"
