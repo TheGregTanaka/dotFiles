@@ -23,7 +23,7 @@ export PATH="$PATH:/usr/local/sbin"
 #alias vim='/usr/local/Cellar/vim/8.2.1950/bin/vim'
 #you'd think it stands for 'grep explain'
 #but it actually stands for 'greg explain'
-function grexplain { grep "$1" ~/dotFiles/bash_profile; }
+function grexplain { grep "$1" ~/dotFiles/zprofile; }
 #make mv and cp always interactive and verbose
 alias cp='cp -iv'
 alias mv='mv -iv'
@@ -32,7 +32,7 @@ alias mkdir='mkdir -p'
 #navigate to dev directories
 alias cdot="cd $HOME/dotFiles"
 alias cdev="cd $HOME/dev"
-alias cdcd="cd $HOME/OneDrive/college/2020-2021spring"
+alias cdcd="cd $HOME/OneDrive/college/2021-2022fall/"
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias
@@ -44,6 +44,7 @@ alias tiCls='tmux kill-session -t ide'
 alias mb="make build"
 alias md="make testbuild"
 alias mgdb="make debug"
+alias jn="jupyter-notebook"
 
 #custom docker and docker-compose commands
 COMPOSE_PATH="$HOME/dev/compose/docker-compose.yml"
@@ -51,6 +52,8 @@ function compose-up { docker-compose -f "$COMPOSE_PATH" up -d "$1"; }
 function compose-down { docker-compose -f "$COMPOSE_PATH" stop "$1"; }
 function dexec { docker exec -it "$1" bash; }
 
+#cmake
+PATH="/Applications/CMake.app/Contents/bin":"$PATH"
 #for C++
 alias gp="g++ -std=c++11"
 # get makefile from dotFiles
@@ -87,7 +90,7 @@ export PATH="$PATH:/opt/apache-maven-3.5.3/bin"
 export PATH="$PATH:/usr/bin/tslint"
 
 #python
-export PATH="$PATH:~/Library/Python/3.6/bin"
+export PATH="$PATH:/usr/local/bin/python3"
 alias py="python3"
 
 # added by Anaconda3 5.2.0 installer
@@ -106,3 +109,24 @@ export PATH="$PATH:/usr/local/lib"
 
 #flutter
 export PATH="$PATH:$HOME/dev/flutter/bin"
+
+# Setting PATH for Python 3.9
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.9/bin:${PATH}"
+export PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/gtanaka/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/gtanaka/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/gtanaka/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/gtanaka/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

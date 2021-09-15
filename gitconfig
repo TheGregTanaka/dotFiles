@@ -5,3 +5,7 @@
 	editor = vim
 	filemode = false
 	excludesfile = ~/.gitignoreglobal
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true

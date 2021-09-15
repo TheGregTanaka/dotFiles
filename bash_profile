@@ -101,7 +101,7 @@ do
 done
 
 #python
-export PATH="$PATH:~/Library/Python/3.6/bin"
+export PATH="$PATH:/usr/local/bin/python3"
 alias py="python3"
 
 # added by Anaconda3 5.2.0 installer
@@ -120,3 +120,19 @@ export PATH="$PATH:/usr/local/lib"
 
 #flutter
 export PATH="$PATH:$HOME/dev/flutter/bin"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/gtanaka/opt/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/gtanaka/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/gtanaka/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/gtanaka/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

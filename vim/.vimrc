@@ -1,8 +1,8 @@
 " plugins
 call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
-Plug 'maralla/completor.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'maralla/completor.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -10,6 +10,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 " Plug 'luochen1990/rainbow'
 Plug 'pangloss/vim-javascript'
+" Plug 'lervag/vimtex'
 call plug#end()
 
 " editor settings
@@ -20,6 +21,8 @@ syntax on
 filetype plugin indent on
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd BufNewFile,BufRead *.ejs set filetype=mason
+autocmd FileType mason setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 set number
 set relativenumber
@@ -63,11 +66,11 @@ nnoremap <silent> <leader>h 2<C-w><
 nnoremap <silent> <leader>j 2<C-w>-
 nnoremap <silent> <leader>k 2<C-w>+
 nnoremap <silent> <leader>l 2<C-w>>
-" Window Pane move 
+" Move splits
 map <leader>H :wincmd H<cr>
+map <leader>J :wincmd J<cr>
 map <leader>K :wincmd K<cr>
 map <leader>L :wincmd L<cr>
-map <leader>J :wincmd J<cr>
 
 " close location buffer, useful for hiding syntastic errors
 noremap <silent> <leader>q :lclose<CR>
@@ -121,6 +124,14 @@ let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_tslint_exec='/usr/bin/tslint'
 " Only check html with :SyntasticCheck
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+" Coc
+nnoremap <silent><nowait> <space>w  :<C-u>CocList diagnostics<cr>
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
 
 " rainbow
 let g:rainbow_active = 1
