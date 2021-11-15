@@ -41,10 +41,11 @@ alias tmuxIde='tmux -2 new -s ide \; split-window -v -p 22 \; select-pane -t 0 \
 alias tide='tmuxIde'
 alias tiCls='tmux kill-session -t ide'
 #because I'm super lazy
-alias mb="make build"
+alias mb="make buildclean"
 alias md="make testbuild"
 alias mgdb="make debug"
 alias jn="jupyter-notebook"
+alias jl="jupyter lab"
 
 #custom docker and docker-compose commands
 COMPOSE_PATH="$HOME/dev/compose/docker-compose.yml"
@@ -71,6 +72,7 @@ export PATH="$PATH:/usr/local/go_appengine"
 #for PHP
 export PATH="$PATH:/usr/bin/php"
 export PATH="$PATH:~/.composer/vendor/bin"
+export PATH="$HOME/.symfony/bin:$PATH"
 
 #for java
 export JAVA_HOME=`/usr/libexec/java_home`

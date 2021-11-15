@@ -19,9 +19,10 @@ set term=builtin_ansi
 set nocompatible
 syntax on
 filetype plugin indent on
+autocmd BufNewFile,BufRead *.html.twig set filetype=mason
+autocmd BufNewFile,BufRead *.ejs set filetype=mason
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd BufNewFile,BufRead *.ejs set filetype=mason
 autocmd FileType mason setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 set number
@@ -86,8 +87,8 @@ let g:ctrlp_map = "<C-@>" " Ctrl Space to search
 " use tab to select completion
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <M-n> pumvisible() ? "\<C-n>" : "\<M-n>"
-" inoremap <expr> <M-p> pumvisible() ? "\<C-p>" : "\<M-p>"
+inoremap <expr> <M-n> pumvisible() ? "\<C-n>" : "\<M-n>"
+inoremap <expr> <M-p> pumvisible() ? "\<C-p>" : "\<M-p>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 
 
