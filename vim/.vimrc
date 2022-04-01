@@ -1,6 +1,7 @@
 " plugins
 call plug#begin('~/.vim/plugged')
 Plug 'vim-syntastic/syntastic'
+Plug 'preservim/nerdtree'
 " Plug 'maralla/completor.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
@@ -52,6 +53,11 @@ nnoremap J :tabprevious<CR>
 nnoremap K :tabnext<CR>
 " ctrl o to open file in new tab
 nnoremap <C-o> :tabe 
+" nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 " no shift for colon comds
 nnoremap ; :
 " Split windows easier
