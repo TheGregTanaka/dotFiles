@@ -8,7 +8,6 @@ source ~/dotFiles/gitscripts/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 autoload -U colors && colors
-#export PS1="%n@💻👉 %1~$blue\$(__git_ps1)$reset 👽 "
 setopt PROMPT_SUBST ; PS1='%n@💻👉 %1~%{$fg[cyan]%}$(__git_ps1 " (%s)") %{$reset_color%}👽 '
 # for systems that don't support emoji in terminal
 #export PS1="\u@\h \W$blue\$(__git_ps1)$reset :)"
@@ -19,6 +18,8 @@ fi
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
+#use neovim
+alias vim='/usr/local/bin/nvim'
 #use brew vim
 #alias vim='/usr/local/Cellar/vim/8.2.1950/bin/vim'
 #you'd think it stands for 'grep explain'

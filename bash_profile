@@ -26,8 +26,7 @@ fi
 #brew sbin
 export PATH="$PATH:/usr/local/sbin"
 
-#use brew vim
-#alias vim='/usr/local/Cellar/vim/8.2.1950/bin/vim'
+#alias vim='/usr/local/Cellar/vim/8.2.1950/bin/vim' #brew vim
 #you'd think it stands for 'grep explain'
 #but it actually stands for 'greg explain'
 function grexplain { grep "$1" ~/dotFiles/bash_profile; }

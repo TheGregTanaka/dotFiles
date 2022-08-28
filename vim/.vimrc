@@ -1,5 +1,6 @@
 " plugins
 call plug#begin('~/.vim/plugged')
+Plug 'lervag/vimtex'
 Plug 'vim-syntastic/syntastic'
 Plug 'preservim/nerdtree'
 " Plug 'maralla/completor.vim'
@@ -11,12 +12,16 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 " Plug 'luochen1990/rainbow'
 Plug 'pangloss/vim-javascript'
-" Plug 'lervag/vimtex'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'conornewton/vim-latex-preview'
 call plug#end()
 
 " editor settings
 set t_Co=256
-set term=builtin_ansi
+if !has('nvim')
+  set term=builtin_ansi
+endif
 set nocompatible
 syntax on
 filetype plugin indent on
@@ -26,6 +31,7 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType mason setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
+let g:tex_flavor = 'latex'
 set number
 set relativenumber
 runtime! config/**/*.vim
@@ -110,6 +116,11 @@ set noshowmode
 let g:airline_theme='tomorrow'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" use python3
+let g:loaded_python_provider = 0
+let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.9/bin/python3'
+set pyxversion=3
 
 " Syntastic
 noremap <silent> <leader>w :Errors<CR>
