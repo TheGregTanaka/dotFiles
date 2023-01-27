@@ -12,7 +12,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 " Plug 'luochen1990/rainbow'
 Plug 'pangloss/vim-javascript'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'conornewton/vim-latex-preview'
 call plug#end()
