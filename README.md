@@ -47,11 +47,13 @@ ln -s ~/dotFiles/tmux.conf ~/.tmux.conf
 ln -s ~/dotFiles/vim/.vimrc ~/.ideavimrc
 ln -s ~/dotFiles/gitconfig ~/.gitconfig
 ln -s ~/dotFiles/gitignoreglobal ~/.gitignoreglobal
+mkdir ~/.zsh
+ln -s ~/dotFiles/gitscripts/git-completion.zsh ~/.zsh/_git
 ln -s ~/dotFiles/zprofile ~/.zshrc
 
 # load
 #source ~/.bash_profile
-source ~/.zprofile
+source ~/.zshrc
 tmux source-file ~/.tmux.conf
 
 ```
