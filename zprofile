@@ -105,7 +105,6 @@ export PATH="/usr/local/mysql/bin/:$PATH"
 #openvpn
 export PATH="$PATH:/usr/local/Cellar/openvpn/2.4.7_1/sbin/openvpn"
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 export PATH="$PATH:/usr/local/lib"
