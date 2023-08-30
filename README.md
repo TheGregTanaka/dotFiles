@@ -20,25 +20,29 @@ cd dotFiles
 curl -fLo ~/dotFiles/vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# set up symlinks
+# back up existing configs
 cd ~
 cat ~/.bash_profile >> ~/.bash_profile.old
-rm ~/.bash_profile
 cat ~/.vim >> ~/.vim.old
-rm ~/.vim
 cat ~/.vimrc >> ~/.vimrc.old
-rm ~/.vimrc
 cat ~/.tmux.conf >> ~/.tmux.conf.old
-rm ~/.tmux.conf
 cat ~/.ideavimrc >> ~/.ideavimrc.old
-rm ~/.ideavimrc
 cat ~/.gitconfig >> ~/.gitconfig.old
-rm ~/.gitconfig
 cat ~/.gitignoreglobal >> ~/.gitignoreglobal.old
-rm ~/.gitignoreglobal
 cat ~/.gdbinit >> ~/.gdbinit.old
+
+# remove old files
+rm ~/.bash_profile
+rm ~/.vim
+rm ~/.vimrc
+rm ~/.tmux.conf
+rm ~/.ideavimrc
+rm ~/.gitconfig
+rm ~/.gitignoreglobal
 rm ~/.gdbinit
 rm ~/.zprofile
+
+# set up symlinks
 ln -s ~/dotFiles/gdbinit ~/.gdbinit
 ln -s ~/dotFiles/bash_profile ~/.bash_profile
 ln -s ~/dotFiles/vim ~/.vim
