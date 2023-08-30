@@ -33,7 +33,7 @@ alias mkdir='mkdir -p'
 #navigate to dev directories
 alias cdot="cd $HOME/dotFiles"
 alias cdev="cd $HOME/dev"
-alias cdcd="cd $HOME/OneDrive/college/2022-2023spring/"
+alias cdcd="cd $HOME/OneDrive/college/2022-2023summer/"
 #syntax highlighting for less
 alias lessh='LESSOPEN="| src-hilite-lesspipe.sh %s" less -R -M '
 #tmux custom split alias

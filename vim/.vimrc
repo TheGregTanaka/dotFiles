@@ -15,6 +15,7 @@ Plug 'pangloss/vim-javascript'
 " Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'conornewton/vim-latex-preview'
+Plug 'tikhomirov/vim-glsl'
 call plug#end()
 
 " editor settings
@@ -31,6 +32,13 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType mason setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
+function! NewFile()
+    silent! 0r $HOME/.vim/templates/%:e.skel
+    silent! s/FILENAME/\=expand("%:t:r")
+endfunction
+
+autocmd BufNewFile * call NewFile()
+
 let g:tex_flavor = 'latex'
 set number
 set relativenumber
