@@ -6,6 +6,7 @@ Quick setup
 # set up key - this should be done manually
 # on mac to set brew linkings
 brew install vim
+brew install neovim
 brew install tmux
 brew install source-highlight
 brew install gdb
@@ -30,6 +31,7 @@ cat ~/.ideavimrc >> ~/.ideavimrc.old
 cat ~/.gitconfig >> ~/.gitconfig.old
 cat ~/.gitignoreglobal >> ~/.gitignoreglobal.old
 cat ~/.gdbinit >> ~/.gdbinit.old
+cat ~/.config/nvim/init.vim >> ~/.initvim.old
 
 # remove old files
 rm ~/.bash_profile
@@ -41,6 +43,7 @@ rm ~/.gitconfig
 rm ~/.gitignoreglobal
 rm ~/.gdbinit
 rm ~/.zprofile
+rm ~/.config/nvim/init.vim
 
 # set up symlinks
 ln -s ~/dotFiles/gdbinit ~/.gdbinit
@@ -54,6 +57,8 @@ ln -s ~/dotFiles/gitignoreglobal ~/.gitignoreglobal
 mkdir ~/.zsh
 ln -s ~/dotFiles/gitscripts/git-completion.zsh ~/.zsh/_git
 ln -s ~/dotFiles/zprofile ~/.zshrc
+mkdir -p ~/.config/nvim
+ln =s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
 
 # load
 #source ~/.bash_profile
