@@ -58,7 +58,7 @@ mkdir ~/.zsh
 ln -s ~/dotFiles/gitscripts/git-completion.zsh ~/.zsh/_git
 ln -s ~/dotFiles/zprofile ~/.zshrc
 mkdir -p ~/.config/nvim
-ln =s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotFiles/vim/init.vim ~/.config/nvim/init.vim
 
 # load
 #source ~/.bash_profile
